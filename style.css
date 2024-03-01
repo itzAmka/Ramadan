@@ -1,266 +1,110 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
 :root {
-	--primary-clr: #00235b;
-	--secondary-clr: #ffdd83;
-	--support-clr: #e21818;
-	--accent-clr: #98dfd6;
-	--header-clr: #0543a7;
-	--primary-font: 'Open Sans', sans-serif;
-	--secondary-font: 'Lobster', cursive;
+  --base-clr: #ffffff;
+  --primary-clr: #3a86ff;
+  --secondary-clr: #52b788;
+  --accent-clr: #e21818;
+  --primary-font: "Open Sans", sans-serif;
+  --secondary-font: "Lobster", cursive;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html,
+html {
+  font-family: var(--primary-font);
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
 body {
-	font-family: var(--primary-font);
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.5;
-	color: var(--secondary-clr);
-	letter-spacing: 1px;
-	scroll-behavior: smooth;
-	scroll-padding-top: 6rem;
+  background-color: var(--base-clr);
+  color: var(--secondary-clr);
+  letter-spacing: 1px;
+  line-height: 1.6;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
-body {
-	background-color: var(--primary-clr);
+.header {
+  background-image: url("/images/kaaba_mecca_saudi_arabia.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  overflow: hidden;
+  position: relative;
 }
 
-h1,
-h2 {
-	font-family: var(--secondary-font);
-	font-size: 3rem;
-	font-weight: 400;
-	line-height: 1.2;
-	color: var(--accent-clr);
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-h2 {
-	font-size: 2rem;
+.header > * {
+  position: relative;
+  z-index: 10;
 }
 
-/* header */
-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background-color: var(--header-clr);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1.5rem 1rem;
-	z-index: 10;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.header--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
 }
 
-nav {
-	max-width: 1200px;
-	width: 100%;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 1rem;
+.header--container h1 {
+  font-size: 3rem;
+  overflow: hidden;
+  text-align: center;
+  color: var(--primary-clr);
 }
 
-.hamburger-menu {
-	display: none;
-}
-
-nav a.logo {
-	font-family: var(--secondary-font);
-	font-size: 2rem;
-	font-weight: 400;
-	line-height: 1.2;
-	color: var(--accent-clr);
-	transition: all 0.3s ease-in-out;
-	z-index: 10;
-}
-
-nav a.logo:hover {
-	color: var(--secondary-clr);
-}
-
-nav .logo span {
-	color: var(--support-clr);
-}
-
-.nav-links a {
-	color: var(--secondary-clr);
-	font-size: 1.2rem;
-	font-weight: 600;
-	transition: all 0.3s ease-in-out;
-}
-
-.nav-links a:hover {
-	color: var(--accent-clr);
-}
-
-/* slide the navbar from right when open */
-.nav-links {
-	position: fixed;
-	top: 0;
-	right: -100%;
-	min-height: 100vh;
-	width: 100%;
-	background-color: var(--primary-clr);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 1rem;
-	transition: all 0.5s ease-in-out;
-}
-
-.nav-links.active {
-	right: 0;
-}
-
-.hamburger-menu {
-	display: flex;
-	flex-direction: column;
-	gap: 0.3rem;
-	cursor: pointer;
-}
-
-.line {
-	width: 25px;
-	height: 3px;
-	background-color: var(--secondary-clr);
-}
-
-.change .line-1 {
-	rotate: 45deg;
-	translate: 0px 10px;
-}
-
-.change .line-2 {
-	rotate: -45deg;
-	translate: -1px 2px;
-}
-
-.change .line-3 {
-	opacity: 0;
-}
-
-/* top border */
-.top-border {
-	width: 100%;
-	height: 5px;
-	background-color: var(--support-clr);
-	margin-bottom: 2rem;
-	border-radius: 5px;
-}
-
-/* main container */
-.main-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	width: 100%;
-	padding: 1rem 2rem;
-	margin: 3rem 0;
-	gap: 5rem;
-}
-
-.content {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 3rem;
-}
-
-.content#overview {
-	margin-top: 5rem;
-}
-
-.not-fasting .explainations .explaination {
-	font-weight: bold;
-	color: red;
-}
-
-.explainations {
-	width: 80%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 1rem;
-	padding: 0 0.4rem;
-}
-
-.explainations ul {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 0.7rem;
-	list-style: square;
-}
-
-.explainations ul li::marker {
-	color: var(--support-clr);
-	font-size: 1rem;
-}
-
-.explainations li span {
-	font-weight: 600;
-	color: var(--accent-clr);
+.header--container h1 span.words {
+  color: var(--secondary-clr);
 }
 
 footer {
-	width: 100%;
-	background-color: var(--header-clr);
-	padding: 1rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 100%;
+  background-color: var(--header-clr);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .copyright {
-	font-size: 0.8rem;
-	color: var(--secondary-clr);
-	text-align: center;
+  font-size: 0.8rem;
+  color: black;
+  text-align: center;
 }
 
 .copyright a {
-	color: var(--accent-clr);
+  color: var(--primary-clr);
 }
 
 .copyright a:hover {
-	color: var(--secondary-clr);
-}
-
-@media screen and (max-width: 540px) {
-	h1 {
-		font-size: 1.8rem;
-	}
-
-	h2 {
-		font-size: 1.5rem;
-	}
-
-	.explainations {
-		width: 100%;
-	}
+  color: var(--secondary-clr);
 }
