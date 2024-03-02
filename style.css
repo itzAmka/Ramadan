@@ -190,7 +190,7 @@ footer {
 }
 
 .copyright a {
-  color: white
+  color: white;
   transition: color 100ms linear;
 }
 
