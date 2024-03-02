@@ -165,7 +165,8 @@ a {
 }
 
 .accordion--answers,
-.accordion-summary {
+.accordion-summary,
+.accordion-note {
   display: flex;
   flex-direction: column;
   gap: 1rem;
