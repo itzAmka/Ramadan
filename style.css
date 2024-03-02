@@ -140,8 +140,7 @@ a {
 }
 
 .accordion--title {
-  text-align: center;
-  align-self: center;
+  text-align: start;
   font-size: 1.5rem;
   color: black;
 }
