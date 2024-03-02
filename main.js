@@ -1,21 +1,23 @@
 const logo = document.querySelector(".logo");
 const footerYear = document.querySelector(".footer-year");
-const accordionHeader = document.querySelector(".accordion--header");
-const accordionContent = document.querySelector(".accordion--content");
-const accordionIconOpen = document.querySelector(".accordion--icon-open");
-const accordionIconClose = document.querySelector(".accordion--icon-close");
+const accordions = document.querySelectorAll(".accordion");
+const accordionHeader = document.querySelectorAll(".accordion--header");
+const accordionContent = document.querySelectorAll(".accordion--content");
+const accordionIconOpen = document.querySelectorAll(".accordion--icon-open");
+const accordionIconClose = document.querySelectorAll(".accordion--icon-close");
 
-// toggle accordion
-accordionHeader.addEventListener("click", (e) => {
-  accordionContent.classList.toggle("accordion--content-active");
+accordions.forEach((_, i) => {
+  accordionHeader[i].addEventListener("click", (e) => {
+    accordionContent[i].classList.toggle("accordion--content-active");
 
-  if (accordionContent.classList.contains("accordion--content-active")) {
-    accordionIconOpen.classList.toggle("accordion--icon-active");
-    accordionIconClose.classList.toggle("accordion--icon-active");
-  } else {
-    accordionIconOpen.classList.toggle("accordion--icon-active");
-    accordionIconClose.classList.toggle("accordion--icon-active");
-  }
+    if (accordionContent[i].classList.contains("accordion--content-active")) {
+      accordionIconOpen[i].classList.toggle("accordion--icon-active");
+      accordionIconClose[i].classList.toggle("accordion--icon-active");
+    } else {
+      accordionIconOpen[i].classList.toggle("accordion--icon-active");
+      accordionIconClose[i].classList.toggle("accordion--icon-active");
+    }
+  });
 });
 
 footerYear.textContent =
