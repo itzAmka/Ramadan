@@ -1,9 +1,22 @@
 const logo = document.querySelector(".logo");
 const footerYear = document.querySelector(".footer-year");
+const accordionHeader = document.querySelector(".accordion--header");
+const accordionContent = document.querySelector(".accordion--content");
+const accordionIconOpen = document.querySelector(".accordion--icon-open");
+const accordionIconClose = document.querySelector(".accordion--icon-close");
 
-// colors
-const secondaryClr = "#52b788";
-const accentClr = "#e21818";
+// toggle accordion
+accordionHeader.addEventListener("click", (e) => {
+  accordionContent.classList.toggle("accordion--content-active");
+
+  if (accordionContent.classList.contains("accordion--content-active")) {
+    accordionIconOpen.classList.toggle("accordion--icon-active");
+    accordionIconClose.classList.toggle("accordion--icon-active");
+  } else {
+    accordionIconOpen.classList.toggle("accordion--icon-active");
+    accordionIconClose.classList.toggle("accordion--icon-active");
+  }
+});
 
 footerYear.textContent =
   new Date().getFullYear() == 2023
