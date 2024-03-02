@@ -178,6 +178,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 3rem;
+  background-color: var(--primary-clr);
+  color: white;
 }
 
 .copyright {
@@ -187,9 +190,14 @@ footer {
 }
 
 .copyright a {
-  color: var(--primary-clr);
+  color: white
+  transition: color 100ms linear;
 }
 
 .copyright a:hover {
-  color: var(--secondary-clr);
+  color: black;
+}
+
+.copyright a:visited {
+  color: white;
 }
